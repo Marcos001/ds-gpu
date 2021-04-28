@@ -13,6 +13,26 @@ RUN apt-get update -qq && \
     curl \
     git \
     cmake \
+    gfortran \
+    libatlas-base-dev \
+    libbz2-dev \
+    libcurl4-openssl-dev \
+    libicu-dev \
+    liblzma-dev \
+    libpango-1.0-0 \
+    libpangocairo-1.0-0 \
+    libpcre3-dev \
+    libtcl8.6 \
+    libtiff5 \
+    libtk8.6 \
+    libx11-6 \
+    libxt6 \
+    locales \
+    tzdata \
+    zlib1g-dev \
+    libffi-dev \
+    libsqlite3-dev \
+    libreadline-dev \
     texlive-xetex \ 
     libgl1-mesa-glx
 
