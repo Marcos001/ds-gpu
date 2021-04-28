@@ -18,6 +18,7 @@ RUN apt-get update -qq && \
     libbz2-dev \
     libcurl4-openssl-dev \
     libicu-dev \
+    libssl1.0-dev \
     liblzma-dev \
     libpango-1.0-0 \
     libpangocairo-1.0-0 \
