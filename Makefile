@@ -5,8 +5,8 @@
 #---------- #
 
 # change to your project and data folder
-APP = $(PWD)
-DATA = $(PWD)
+APP = "/home/marcos/projects/"
+DATA = "/home/marcos/data/"
 
 # config docker image and container
 IMAGE = "ds-gpu:0.0.2"
@@ -21,7 +21,7 @@ DSDATA = "/media/ds/data/"
 
 build:
 	@echo "Build image $(IMAGE)" 
-	@docker build  --no-cache  --build-arg $(HOME) --force-rm -t $(IMAGE) .
+	@docker build  --no-cache  --build-arg HOME=$(HOME) --force-rm -t $(IMAGE) .
 
 
 clean:
