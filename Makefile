@@ -9,7 +9,7 @@ APP = $(PWD)
 DATA = $(PWD)
 
 # config docker image and container
-IMAGE = "ds-gpu:0.0.1"
+IMAGE = "ds-gpu:0.0.2"
 CONTAINER = "ds-gpu-container"
 DSHOME = "/home/ds/app/"
 DSDATA = "/media/ds/data/"
