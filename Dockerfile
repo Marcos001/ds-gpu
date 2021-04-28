@@ -4,39 +4,28 @@ ARG HOME
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get install libssl-dev
-
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    apt-transport-https \
-    build-essential \
+    make \
+    build-essential \ 
+    libssl1.0-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
     wget \
     curl \
-    git \
-    cmake \
-    gfortran \
-    libatlas-base-dev \
-    libbz2-dev \
-    libcurl4-openssl-dev \
-    libicu-dev \
-    libssl1.0-dev \ 
-    liblzma-dev \
-    libpango-1.0-0 \
-    libpangocairo-1.0-0 \
-    libpcre3-dev \
-    libtcl8.6 \
-    libtiff5 \
-    libtk8.6 \
-    libx11-6 \
-    libxt6 \
-    locales \
-    tzdata \
-    zlib1g-dev \
+    llvm \
+    libncurses5-dev \
+    libncursesw5-dev \
+    xz-utils tk-dev \
     libffi-dev \
+    liblzma-dev \
     libsqlite3-dev \
     libreadline-dev \
     texlive-xetex \ 
     libgl1-mesa-glx
+
 
 WORKDIR ${HOME}
 
