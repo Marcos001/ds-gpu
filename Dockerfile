@@ -4,6 +4,7 @@ ARG HOME
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+RUN apt-get install libssl-dev
 
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -18,7 +19,7 @@ RUN apt-get update -qq && \
     libbz2-dev \
     libcurl4-openssl-dev \
     libicu-dev \
-    libssl1.0-dev \
+    libssl1.0-dev \ 
     liblzma-dev \
     libpango-1.0-0 \
     libpangocairo-1.0-0 \
