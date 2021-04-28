@@ -21,7 +21,7 @@ DSDATA = "/media/ds/data/"
 
 build:
 	@echo "Build image $(IMAGE)" 
-	@docker build  --no-cache --force-rm -t $(IMAGE) .
+	@docker build  --no-cache  --build-arg $(HOME) --force-rm -t $(IMAGE) .
 
 
 clean:
