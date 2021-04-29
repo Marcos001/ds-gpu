@@ -14,6 +14,8 @@ CONTAINER = "ds-gpu-container"
 DSHOME = "/home/ds/app/"
 DSDATA = "/media/ds/data/"
 
+MPORT = 8000 # machine port, previous 8888
+CPORT = 8890 # container port, previous 8888
 
 #--------- # 
 # ACTIONS  #
@@ -36,9 +38,9 @@ up:
 
 up-lab:
 	@docker run --gpus all -d --name $(CONTAINER) \
-	-p 8888:8888 \
+	-p $(MPORT):$(CPORT) \
 	-it -v $(APP):$(DSHOME) -v $(DATA):$(DSDATA) $(IMAGE) \
-	jupyter-notebook --ip 0.0.0.0 --no-browser --allow-root
+	jupyter-notebook --ip 0.0.0.0 --port=$(CPORT) --no-browser --allow-root
 
 
 view-logs:
