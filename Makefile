@@ -38,7 +38,7 @@ up:
 
 up-lab:
 	@docker run --gpus all -d --name $(CONTAINER) \
-	-p $(MPORT):$(CPORT) \
+	-p "0.0.0.0:$(MPORT):$(CPORT)" \
 	-it -v $(APP):$(DSHOME) -v $(DATA):$(DSDATA) $(IMAGE) \
 	jupyter-notebook --ip 0.0.0.0 --port=$(CPORT) --no-browser --allow-root
 
