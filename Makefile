@@ -37,7 +37,7 @@ up:
 up-lab:
 	@docker run --gpus all -d --name $(CONTAINER) \
 	-p 8888:8888 \
-	-it -v $(APP):$(DSHOME) -v $(DATA):(DSDATA) $(IMAGE) \
+	-it -v $(APP):$(DSHOME) -v $(DATA):$(DSDATA) $(IMAGE) \
 	jupyter-notebook --ip 0.0.0.0 --no-browser --allow-root
 
 
