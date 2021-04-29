@@ -14,8 +14,8 @@ CONTAINER = "ds-gpu-container"
 DSHOME = "/home/ds/app/"
 DSDATA = "/media/ds/data/"
 
-MPORT = 8000 # machine port, previous 8888
-CPORT = 8890 # container port, previous 8888
+MPORT = 8000
+CPORT = 8890
 
 #--------- # 
 # ACTIONS  #
