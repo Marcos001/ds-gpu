@@ -33,7 +33,7 @@ clean:
 
 up:
 	@docker run --gpus all -d --name $(CONTAINER) \
-	 -it -v $(APP):$(DSHOME) -v $(DATA):(DSDATA) $(IMAGE) bash
+	 -it -v $(APP):$(DSHOME) -v $(DATA):$(DSDATA) $(IMAGE) bash
 
 
 up-lab:
