@@ -14,7 +14,7 @@ CONTAINER = "ds-gpu-container"
 DSHOME = "/home/ds/app/"
 DSDATA = "/media/ds/data/"
 
-MPORT = 8000
+MPORT = 8001
 CPORT = 8890
 
 #--------- # 
