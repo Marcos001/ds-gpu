@@ -9,21 +9,25 @@ APP = "/home/marcos/projects/"
 DATA = "/home/marcos/data/"
 
 # config docker image and container
-IMAGE = "ds-gpu:0.0.2"
+IMAGE = "ds-gpu:0.0.1"
 CONTAINER = "ds-gpu-container"
 DSHOME = "/home/ds/app/"
 DSDATA = "/media/ds/data/"
 
-MPORT = 8001
-CPORT = 8890
+HPORT = 8001
+CPORT = 8888
 
 #--------- # 
 # ACTIONS  #
 #--------- #
 
-build:
+build-run:
 	@echo "Build image $(IMAGE)" 
 	@docker build  --no-cache  --build-arg HOME=$(DSHOME) --force-rm -t $(IMAGE) .
+
+build-dc:
+	@echo "Build image $(IMAGE)" 
+	@docker build --env-file neo.env  --no-cache --force-rm -t $(IMAGE) .
 
 
 clean:
@@ -38,7 +42,7 @@ up:
 
 up-lab:
 	@docker run --gpus all -d --name $(CONTAINER) \
-	-p "0.0.0.0:$(MPORT):$(CPORT)" \
+	-p "0.0.0.0:$(HPORT):$(CPORT)" \
 	-it -v $(APP):$(DSHOME) -v $(DATA):$(DSDATA) $(IMAGE) \
 	jupyter-notebook --ip 0.0.0.0 --port=$(CPORT) --no-browser --allow-root
 

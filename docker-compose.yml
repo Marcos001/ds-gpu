@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+    ds-cpu:
+        container_name: ds-cpu-container
+        image: ds-cpu:0.1.0
+        runtime: nvidia
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                HOME: /home/ds/
+        volumes:
+        - '${PROJECT_FOLDER}:/home/ds/app/'
+        - '${PROJECT_DATA}:/home/ds/data/'
+        ports:
+        - '0.0.0.0:8888:8888'
+        command: jupyter-lab --ip 0.0.0.0 --no-browser --allow-root
